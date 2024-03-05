@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "38cf39ef-9c5c-4977-b122-11572cc7faff",
+		"name": "Meistrai-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32552196"
+	},
+	"item": [
+		{
+			"name": "User handler",
+			"item": [
+				{
+					"name": "User registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"name\": \"Jonas\", \n    \"email\": \"jonas@gmail.com\", \n    \"role\" : \"admin\", \n    \"password\": \"123456789\", \n    \"passwordConfirm\": \"123456789\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"email\": \"jonas@gmail.com\", \n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/users/65e6d9696b58d61d6b8aeb9f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65e6d9696b58d61d6b8aeb9f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autoshop handler",
+			"item": [
+				{
+					"name": "Create autoshop",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"name\" : \"Horse autoshop\", \n    \"address\" : \"laisves al. 15\", \n    \"manager\": \"Horse\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/autoshops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"autoshops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autoshop deletion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/autoshops/65e6f1f132c1fe36d6e86bf8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"autoshops",
+								"65e6f1f132c1fe36d6e86bf8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update autoshop",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"name\" : \"Bird UPDATED autoshop\", \n    \"address\" : \"laisves al. 12\", \n    \"manager\": \"Bird UPDATED\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/autoshops/65e6f0b532c1fe36d6e86bf5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"autoshops",
+								"65e6f0b532c1fe36d6e86bf5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all autoshops",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/autoshops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"autoshops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show autoshop by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/autoshops/65e6fee6786605a34b45312e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"autoshops",
+								"65e6fee6786605a34b45312e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Worker handler",
+			"item": [
+				{
+					"name": "Create a worker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Vaidotas\",\n    \"surname\":\"Vaidotauskas\",\n    \"specialization\":\"Varikliu specialistas\",\n    \"worker_photo\":\"photo.svg\",\n    \"autoshop\":\"65e6ff16786605a34b453134\",\n    \"user\":\"65e6d9696b58d61d6b8aeb9f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update worker info",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Vaidotas UPDATED\",\n    \"surname\":\"Vaidotauskas UPDATED\",\n    \"specialization\":\"Varikliu specialistas\",\n    \"worker_photo\":\"photo.svg\",\n    \"autoshop\":\"65e6ff16786605a34b453134\",\n    \"user\":\"65e6d9696b58d61d6b8aeb9f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers/65e7004b786605a34b453138",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers",
+								"65e7004b786605a34b453138"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Worker deletion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers/65e700a7786605a34b45313b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers",
+								"65e700a7786605a34b45313b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all workers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTZkOTY5NmI1OGQ2MWQ2YjhhZWI5ZiIsImlhdCI6MTcwOTYyNzgxOSwiZXhwIjo2MDE3MDk2Mjc3NTl9.LZ4U4N6R882cM3IjjXahhvkk_CMe6q9ZpKMdW0xiChU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show worker by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers/65e7004b786605a34b453138",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers",
+								"65e7004b786605a34b453138"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
