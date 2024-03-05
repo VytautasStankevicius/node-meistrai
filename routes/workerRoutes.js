@@ -18,5 +18,7 @@ router
     authControler.restrictTo('admin'),
     workerControler.deleteWorker
     )
-
+router
+.route('/liked/:id')
+.patch(workerControler.updateLikeWorker)
 module.exports = router;

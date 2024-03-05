@@ -468,6 +468,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Press like on worker",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isLiked\":\"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/v1/workers/liked/65e6ffc0786605a34b453136",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"workers",
+								"liked",
+								"65e6ffc0786605a34b453136"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

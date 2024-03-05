@@ -28,7 +28,7 @@ exports.getAllWorkers = async (req,res)=>{
     }
 };
  
- 
+
 exports.createWorker = async (req, res)=>{
     try{
         const newWorker = await Worker.create(req.body)
@@ -89,6 +89,28 @@ exports.updateWorker = async(req,res)=>{
     }
 };
  
+
+exports.updateLikeWorker = async(req,res)=>{
+    try{
+        const worker = await Worker.findByIdAndUpdate(req.params.id,req.body,{
+            runValidators: true
+        })
+        res
+    .status(200)
+    .json({
+        status:'success',
+        message: "Worker Updated",
+        data: {
+            worker
+        }
+    })
+    }catch(err){
+        res.status(404).json({
+            status: 'failed',
+            message:err
+        })
+    }
+};
 exports.deleteWorker = async (req,res)=>{
     try{
         await Worker.findByIdAndDelete(req.params.id);
